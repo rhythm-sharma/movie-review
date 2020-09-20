@@ -1,0 +1,43 @@
+.navigation-container {
+  display: flex;
+  background-color: #0b2239;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+}
+
+.brand-title {
+  font-size: 25px;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, .5);
+}
+
+.dropdown-menu {
+  right: 0px !important;
+  left: auto !important;
+}
+
+.dropdown-item {
+  cursor: pointer;
+  max-width: 155px;
+}
+
+.search-bar {
+  width: 700px !important;
+}
+
+.dropdown-toggle::after {
+  color: white;
+}
+
+.navbar-collapse {
+  flex-grow: 0 !important;
+}
+
+.profile-image {
+  background-color: white;
+}

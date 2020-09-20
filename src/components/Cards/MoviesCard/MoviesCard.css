@@ -1,0 +1,308 @@
+/* Color variables */
+:root {
+    --sky-blue: #68a7ff;
+    --mint-tulip: #ccf5e7;
+    --greyish-brown: #444444;
+    --greeny-blue: #17a2b8;
+    --lipstick: #dd1c26;
+    --silver-chalice: #adadad;
+    --water-blue: #1999d2;
+}
+
+.college-card-container {
+    position: relative;
+    width: 300px;
+    border: 0.1px solid rgb(68, 68, 68, 0.2);
+    box-shadow: 0px 0px 19px 0px rgba(68, 68, 68, 0.1);
+    border-radius: 3.8px;
+    margin: 37px auto 37px auto;
+}
+
+.college-card-container-modal {
+    position: relative;
+    width: 100%;
+    margin: 37px auto 37px auto;
+}
+
+.image-container {
+    width: 300px;
+    height: 233px;
+    position: relative;
+}
+
+.image-container-modal {
+    width: 100%;
+    height: 233px;
+    position: relative;
+}
+
+
+.image-container>* {
+    z-index: 99;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.promoted {
+    position: absolute;
+    top: -17px;
+    right: 0px;
+    width: 152px;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    background-color: var(--sky-blue);
+    clip-path: polygon(13% 49%, 0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.promoted .text {
+    color: white;
+    text-align: center;
+    margin: 0px;
+    font-size: 15px;
+    padding-left: 17px;
+}
+
+.rating-container {
+    position: absolute;
+    text-align: center;
+    padding: 9px;
+    top: 0px;
+    right: 6px;
+    color: white;
+    background-color: var(--greeny-blue);
+    border-radius: 3.8px;
+    box-sizing: border-box;
+}
+
+.rating-container .rating {
+    margin: 0px;
+    font-size: 18.5px;
+    font-weight: bold;
+}
+
+.rating-container .rating-out-off {
+    font-size: 13.5px;
+}
+
+.rating-container .rating-remarks {
+    margin: 0px;
+    font-size: 11.5px;
+    font-weight: 500;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 95%;
+    bottom: 10.8px;
+    margin: 0px 7px;
+}
+
+.tags-modal {
+    position: relative;
+}
+
+
+.tags .tag-button {
+    height: 34px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 16.5px;
+    background-color: white;
+    border: 1px solid var(--greeny-blue);
+    margin-left: 7px;
+}
+
+.tags .tag-button .text {
+    margin: 0px;
+    padding: 8px;
+    font-size: 13.5px;
+    color: var(--greeny-blue);
+    font-weight: bold;
+}
+
+.rank {
+    position: absolute;
+    bottom: 20.8px;
+    right: 14px;
+    font-weight: 500;
+    text-align: left;
+    color: white;
+    margin: 0px;
+}
+
+/* College information plate */
+
+.info-container {
+    padding: 18.2px 0px 10px 0px;
+}
+
+.name-rating-discount {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 27px 3px 17px;
+}
+
+.name-rating-discount .name {
+    color: var(--greyish-brown);
+    font-size: 18.5px;
+}
+
+.name-rating-discount .rating-plate {
+    margin-left: 11px;
+}
+
+.name-rating-discount .rating-plate .full-rating {
+    width: 12px;
+    height: 11px;
+    color: var(--greyish-brown);
+}
+
+.name-rating-discount .rating-plate .empty-rating {
+    width: 12px;
+    height: 11px;
+    color: var(--greyish-brown);
+    opacity: 0.5;
+}
+
+.name-rating-discount .discount {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.name-rating-discount .discount .original-fees {
+    color: var(--greyish-brown);
+    font-size: 11px;
+}
+
+.discount .discount-tag {
+    display: flex;
+    align-items: center;
+    clip-path: polygon(100% 0, 100% 100%, 29% 100%, 0 50%, 30% 0);
+    width: 29px;
+    height: 14px;
+    margin-left: 4px;
+    background-color: var(--lipstick);
+}
+
+.discount-tag .white-dot {
+    width: 4px;
+    height: 4px;
+    margin-left: 6px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.discount-tag .discount-number {
+    font-size: 11px;
+    margin-left: 2px;
+    color: white;
+}
+
+.near-place-with-fees {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 27px 3px 17px;
+}
+
+.near-place-with-fees .near-place {
+    font-size: 13.5px;
+    color: var(--greyish-brown);
+    margin-bottom: 40px
+}
+
+.near-place-with-fees .near-place .away {
+    color: var(--silver-chalice);
+}
+
+.near-place-with-fees .discounted-fees {
+    font-size: 28.5px;
+    color: var(--lipstick);
+    margin-left: auto;
+}
+
+.fees-cycle {
+    text-align: right;
+    margin: 0 27px 0 0;
+    color: var(--greyish-brown);
+    font-size: 11px;
+}
+
+.famous-nearest-places {
+    text-align: left;
+    margin: 0 27px 9px 17px;
+    color: var(--greyish-brown);
+    font-size: 13.5px;
+}
+
+.silver-chalice-normal {
+    font-size: 13.5px;
+    color: var(--silver-chalice);
+}
+
+.greeny-blue-bold {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--greeny-blue);
+}
+
+.greyish-brown-bold {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--greyish-brown);
+}
+
+.water-blue-bold {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--water-blue);
+}
+
+.offer-amenties {
+    display: flex;
+    flex-direction: row;
+    margin: 0 27px 0 0px;
+}
+
+.offer-amenties .offer {
+    display: inline-block;
+    height: 35px;
+    padding: 10px;
+    font-size: 13.5px;
+    border-radius: 0px 16.8px 16.8px 0px;
+    box-sizing: border-box;
+    background-color: var(--mint-tulip);
+    color: var(--greyish-brown);
+}
+
+.offer-amenties .amenties {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+}
+
+.amenties .amenties-text {
+    font-size: 13.5px;
+    text-align: center;
+    font-weight: bold;
+    margin: 0px;
+    color: var(--greeny-blue);
+}
+
+.amenties .amenties-dot {
+    height: 4px;
+    width: 4px;
+    margin: 0 7px 0 7px;
+    border-radius: 50%;
+    background-color: var(--greeny-blue);
+}
