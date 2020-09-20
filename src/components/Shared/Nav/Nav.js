@@ -13,6 +13,7 @@ class Navigation extends Component {
   constructor() {
     super();
     this.state = {
+      userObj: secureStorage.getItem(sessionStorage.currentUser),
       showDropDown: false,
       profileUrl: secureStorage.getItem(sessionStorage.currentUser).profileURL,
       name: secureStorage.getItem(sessionStorage.currentUser).name,
@@ -54,11 +55,11 @@ class Navigation extends Component {
   };
 
   handleMovieSearch = async () => {
-    const { searchVal } = this.state;
+    const { searchVal, userObj } = this.state;
 
     try {
       const data = await axios.get(
-        `search/movie?api_key=04109009dab22c4ad6a56c7b523fa4b9&language=en-US&query=${searchVal}&page=1&include_adult=false`
+        `search/movie?api_key=${userObj.api_key}&language=en-US&query=${searchVal}&page=1&include_adult=false`
       );
       console.log("data: ", data);
       this.props.handleSearchedMovies(data.data.results);

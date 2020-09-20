@@ -29,7 +29,7 @@ class Movies extends Component {
     if (userObj.movies.length === 0) {
       try {
         const data = await axios.get(
-          "/discover/movie?api_key=04109009dab22c4ad6a56c7b523fa4b9"
+          `/discover/movie?api_key=${userObj.api_key}`
         );
         tempMovies = data.data.results;
         tempUserObj.movies = tempMovies;
@@ -63,7 +63,7 @@ class Movies extends Component {
   };
 
   render() {
-    const { item, userObj, searchedMovies } = this.state;
+    const { userObj, searchedMovies } = this.state;
 
     let MovieCard = userObj.movies.map((item, index) => {
       return (

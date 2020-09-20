@@ -46,6 +46,7 @@ function User(username, name, password) {
     username: username,
     name: name,
     password: password,
+    api_key: "04109009dab22c4ad6a56c7b523fa4b9",
     movies: [],
     bookmarked: [],
     profileURL: `https://robohash.org/${getRandomNumber(5)}?set=set5`,

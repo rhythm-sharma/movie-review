@@ -10,6 +10,7 @@ class MoviesCard extends Component {
   constructor() {
     super();
     this.state = {
+      userObj: secureStorage.getItem(sessionStorage.currentUser),
       baseImgURL: "https://image.tmdb.org/t/p/w500",
       bookmark: false,
       showModal: false,
@@ -18,7 +19,7 @@ class MoviesCard extends Component {
   }
 
   async componentDidMount() {
-    const { userObj, index, movieInfo } = this.props;
+    const { movieInfo } = this.props;
     if (movieInfo.bookmark && movieInfo.bookmark) {
       if (movieInfo.bookmark === true) {
         this.setState({
@@ -37,7 +38,7 @@ class MoviesCard extends Component {
 
     try {
       const data = await axios.get(
-        `movie/${movieInfo.id}?api_key=04109009dab22c4ad6a56c7b523fa4b9&language=en-US`
+        `movie/${movieInfo.id}?api_key=${this.state.userObj.api_key}&language=en-US`
       );
       this.setState({
         moreInfo: data.data,
@@ -116,7 +117,7 @@ class MoviesCard extends Component {
                 <img
                   src={baseImgURL + movieInfo.poster_path}
                   className="card-img-top image"
-                  alt="..."
+                  alt="No Image"
                 />
                 {this.props.hideBookmark === false && (
                   <div
@@ -143,16 +144,10 @@ class MoviesCard extends Component {
                 <div className="offer-amenties"></div>
                 <div className="tags">
                   <div className="tag-button">
-                    <p className="text">
-                      {" "}
-                      {"Rating" + " " + movieInfo.vote_average}
-                    </p>
+                    <p className="text">{"Rating " + movieInfo.vote_average}</p>
                   </div>
                   <div className="tag-button">
-                    <p className="text">
-                      {" "}
-                      {"Vote" + " " + movieInfo.vote_count}
-                    </p>
+                    <p className="text">{"Vote " + movieInfo.vote_count}</p>
                   </div>
                 </div>
 
@@ -191,7 +186,7 @@ class MoviesCard extends Component {
             <img
               src={baseImgURL + movieInfo.poster_path}
               className="card-img-top image"
-              alt="..."
+              alt="No Image"
             />
             {this.props.hideBookmark === false && (
               <div
@@ -218,13 +213,10 @@ class MoviesCard extends Component {
             <div className="offer-amenties"></div>
             <div className="tags">
               <div className="tag-button">
-                <p className="text">
-                  {" "}
-                  {"Rating" + " " + movieInfo.vote_average}
-                </p>
+                <p className="text">{"Rating " + movieInfo.vote_average}</p>
               </div>
               <div className="tag-button">
-                <p className="text"> {"Vote" + " " + movieInfo.vote_count}</p>
+                <p className="text"> {"Vote " + movieInfo.vote_count}</p>
               </div>
               <Button
                 className="ml-auto"
